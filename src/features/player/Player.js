@@ -119,8 +119,11 @@ return (
       {
              playState[1].map(cellState =>
               <td key={playerId+':'+cellState.row+':'+cellState.position}
-              className={styles.Box + " "+ (lockedRows[1] ? styles.locked : (cellState.available ? styleFromColor(cellState.color) : styles.unavailable))}
-                  onMouseUp={()=>!lockedRows[1] && cellState.available && dispatch(setPlayed({row:1, value:cellState.value, position:cellState.position, played:true}))}>
+              className={styles.Box + " "+ (cellState.available ?
+                ((cellState.played || !lockedRows[1]) ?
+                 styleFromColor(cellState.color)
+                 : styles.locked )
+                : styles.unavailable) }                  onMouseUp={()=>!lockedRows[1] && cellState.available && dispatch(setPlayed({row:1, value:cellState.value, position:cellState.position, played:true}))}>
                   {cellState.played ? 'X' : cellState.value}
               </td>)
           }
@@ -129,8 +132,11 @@ return (
       {
              playState[2].map(cellState =>
               <td key={playerId+':'+cellState.row+':'+cellState.position}
-              className={styles.Box + " "+ (lockedRows[2] ? styles.locked : (cellState.available ? styleFromColor(cellState.color) : styles.unavailable))}
-                  onMouseUp={()=>!lockedRows[2] && cellState.available && dispatch(setPlayed({row:2, value:cellState.value, position:cellState.position, played:true}))}>
+              className={styles.Box + " "+ (cellState.available ?
+                ((cellState.played || !lockedRows[2]) ?
+                 styleFromColor(cellState.color)
+                 : styles.locked )
+                : styles.unavailable) }                  onMouseUp={()=>!lockedRows[2] && cellState.available && dispatch(setPlayed({row:2, value:cellState.value, position:cellState.position, played:true}))}>
                   {cellState.played ? 'X' : cellState.value}
               </td>)
           }
@@ -139,8 +145,11 @@ return (
       {
              playState[3].map(cellState =>
               <td key={playerId+':'+cellState.row+':'+cellState.position}
-              className={styles.Box + " "+ (lockedRows[3] ? styles.locked : (cellState.available ? styleFromColor(cellState.color) : styles.unavailable))}
-                  onMouseUp={()=>!lockedRows[3] && cellState.available && dispatch(setPlayed({row:3, value:cellState.value, position:cellState.position, played:true}))}>
+              className={styles.Box + " "+ (cellState.available ?
+                ((cellState.played || !lockedRows[3]) ?
+                 styleFromColor(cellState.color)
+                 : styles.locked )
+                : styles.unavailable) }                  onMouseUp={()=>!lockedRows[3] && cellState.available && dispatch(setPlayed({row:3, value:cellState.value, position:cellState.position, played:true}))}>
                   {cellState.played ? 'X' : cellState.value}
               </td>)
           }
