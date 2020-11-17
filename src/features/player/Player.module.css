@@ -1,0 +1,77 @@
+.red {
+  background: red;
+}
+.yellow {
+  background: yellow;
+}
+.green {
+  background: green;
+}
+.blue {
+    background: blue;
+}
+.unavailable {
+  background: black;
+}
+.locked {
+  background: dimgray;
+}
+.default {
+  background: grey;
+}
+.misses {
+  background: antiquewhite;
+}
+
+.col2 {
+  colspan: 6;
+  column-span: 4;
+}
+
+.Box {
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  border: 2px solid white;
+}
+
+.Row {
+  width: auto;
+}
+
+.Table {
+  width: 700px;
+}
+.Name {
+  font-size: 20pt;
+}
+.Grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 0px;
+  background: white;
+}
+.GridItem {
+  background:white;
+  text-align: left;
+}
+.GridItemRight {
+  background:white;
+  text-align: right;
+}
+.Button {
+  appearance: none;
+  background: none;
+  font-size: 32px;
+  padding-left: 12px;
+  padding-right: 12px;
+  outline: none;
+  border: 2px solid transparent;
+  color: rgb(112, 76, 182);
+  padding-bottom: 4px;
+  cursor: pointer;
+  background-color: rgba(112, 76, 182, 0.1);
+  border-radius: 2px;
+  transition: all 0.15s;
+}
