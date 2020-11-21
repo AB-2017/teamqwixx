@@ -17,6 +17,7 @@ import {
   selectTeam,
 } from './playerSlice';
 import styles from './Player.module.css';
+import { ActionCreators } from "redux-undo";
 
 
 
@@ -165,6 +166,20 @@ return (
         {(playerMisses>=nbMiss) ? 'X' : ''}
         </td>
       )}
+      <td/>
+      <td/>
+      <td/>
+      <td/>
+      <td/>
+      <td>
+      <button
+        aria-label="undo last change"
+        onClick={() => dispatch(ActionCreators.undo())}>undo</button>
+      </td>
+      <td>
+      <button aria-label="redo last change"
+      onClick={() => dispatch(ActionCreators.redo())}>redo</button>
+      </td>
       </tr>
       </tbody>
       </table>

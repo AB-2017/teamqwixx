@@ -180,13 +180,14 @@ export const { setName, setAvailable, setPlayed, toggleTeam, addMiss } = playerS
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
-// in the slice file. For example: `useSelector((state) => state.counter.value)`
-export const selectName = state => state.player.playerName;
-export const selectId = state => state.player.id;
-export const selectPlayState = state => state.player.playState;
-export const selectScore = state => state.player.playerScore;
-export const selectMisses = state => state.player.playerMisses;
-export const selectTeam = state => state.player.team;
-export const selectLockedRows = state => state.player.lockedRows;
+// in the slice file. For example: `useSelector((state) => state.[sliceName].value)`
+// Note: when using redux-undo, you reference state.[sliceName].present.[targetKey]
+export const selectName = state => state.player.present.playerName;
+export const selectId = state => state.player.present.id;
+export const selectPlayState = state => state.player.present.playState;
+export const selectScore = state => state.player.present.playerScore;
+export const selectMisses = state => state.player.present.playerMisses;
+export const selectTeam = state => state.player.present.team;
+export const selectLockedRows = state => state.player.present.lockedRows;
 
 export default playerSlice.reducer;
